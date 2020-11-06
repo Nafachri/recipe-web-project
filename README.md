@@ -12,8 +12,11 @@ Impact Byte group project about recipe
 ### Font :
 1. Heebo untuk header dan title, 
 1. Poppins untuk paragraf atau deskripsi
+
+## Info :
 1. Navbar : Ambil dari mainpage 
 1. Footer : Ambil dari mainpage
+1. CSS Framework Memakai Bootstrap 4
         
 
 ### Main Page (Fauzi)
