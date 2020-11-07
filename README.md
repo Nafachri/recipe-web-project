@@ -32,12 +32,12 @@ Impact Byte group project about recipe
 
 ### Find Recipe Page (Naufal)
 - [ ] Navbar
-- [ ] Search Input
-- [ ] Kategori 
-- [ ] Search Button 
-- [ ] Card 
+- [x] Search Input
+- [x] Kategori 
+- [x] Search Button 
+- [x] Card 
 - [ ] Footer
-
+- [ ] Fitur Search Recipe
 ### Bookmark Recipe Page (Raka)
 - [ ] Navbar
 - [ ] Card
