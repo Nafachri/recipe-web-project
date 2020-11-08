@@ -16,12 +16,6 @@ Impact Byte group project about recipe
 1. Heebo untuk header dan title,
 2. Poppins untuk paragraf atau deskripsi
 
-### Info :
-
-1. Navbar : Ambil dari mainpage
-2. Footer : Ambil dari mainpage
-3. CSS Framework Memakai Bootstrap 4
-
 ### Endpoints:
 
 #### Recipe
@@ -31,6 +25,13 @@ Impact Byte group project about recipe
 #### User
 
 - https://5fa790be9def160016adaf1c.mockapi.io/api/v1/users
+
+## Info :
+
+1. Navbar : Ambil dari mainpage
+1. Footer : Ambil dari mainpage
+1. CSS Framework Memakai Bootstrap 4
+1. Theme Color : #682323
 
 ### Main Page (Fauzi)
 
@@ -53,6 +54,7 @@ Impact Byte group project about recipe
 - [ ] Search Button
 - [ ] Card
 - [ ] Footer
+- [ ] Fitur Search Recipe
 
 ### Bookmark Recipe Page (Raka)
 
