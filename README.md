@@ -41,7 +41,8 @@ Impact Byte group project about recipe
 ### Bookmark Recipe Page (Raka)
 - [ ] Navbar
 - [ ] Card
-- [ ] Fitur menambahkan notif apabila ada recipe baru dari "Find Recipe Page"
+- [ ] Fitur semacam cart pada e-commerce 
+- [ ] Remove bookmark
 - [ ] Footer
 
 ### Detail Recipe Page (Dheal)
