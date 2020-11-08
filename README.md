@@ -13,8 +13,8 @@ Impact Byte group project about recipe
 
 ### Font :
 
-1. Heebo untuk header dan title,
-2. Poppins untuk paragraf atau deskripsi
+1. Heebo : Header weightnya : 700, Title weightnya : 400 (<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;700&display=swap" rel="stylesheet">)
+2. Poppins : Tombol, Deskripsi (<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">)
 
 ### Endpoints:
 
@@ -49,12 +49,13 @@ Impact Byte group project about recipe
 ### Find Recipe Page (Naufal)
 
 - [ ] Navbar
-- [ ] Search Input
+- [x] Search Input
 - [ ] Kategori
-- [ ] Search Button
-- [ ] Card
+- [x] Search Button
+- [x] Card
 - [ ] Footer
-- [ ] Fitur Search Recipe
+- [x] Fitur Search Recipe
+- [ ] Fitur Category Recipe
 
 ### Bookmark Recipe Page (Raka)
 

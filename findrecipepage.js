@@ -27,11 +27,11 @@ const showCard = (recipe) => { //ini recipe mengambil data dari API Di Atas
             <div class="card">
                 <img class="card-img-top" src="${recipe[i].imgUrl}" alt="Card image cap">
                     <div class="card-body">
-                        <h5 class="card-title">${recipe[i].recipeName}</h5>
+                        <h5 id="card-title" class="card-title">${recipe[i].recipeName}</h5>
                         <p class="card-text">${recipe[i].desc}</p>
                     </div>
                     <div class="card-footer">
-                        <button class="btn btn-warning text-white">Cook!</button>
+                        <button id="buttonCook" class="btn text-white">Cook!</button>
                     </div>
             </div>
         </div>`
