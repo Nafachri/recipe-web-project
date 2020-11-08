@@ -4,108 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./findrecipepage.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
     <title>Find Recipe Page</title>
 </head>
 <body>
+
+    <!-- Navbar -->
+
+
+
+    <!-- Header -->
+    <header>
+      <h1>Find Your Recipe</h1>
+    </header>
+
 
     <!-- User Input -->
     <form class="container">
         <div class="form-row">
           <div class="col-sm-12 col-md-7">
-            <input type="text" class="form-control" placeholder="Find Recipe ">
+            <input id="input-user-recipe" type="text" class="form-control" placeholder="Find Recipe ">
           </div>
           <div class="col-sm-12 col-md-4">
-            <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+            <select class="custom-select mr-sm-2" id="category">
                 <option selected>Category</option>
-                <option value="1">West Indonesia</option>
-                <option value="2">East Indonesia</option>
-                <option value="2">International</option>
+                <option value="west">Indonesia</option>
+                <option value="international">International</option>
             </select>
           </div>
           <div class="col-sm-12 col-md-1">
-            <button class="btn btn-success">Search</button>
+            <button id="button-click" class="btn text-white">Search</button>
           </div>
         </div>
     </form>
 
     <!-- Card Recipe -->
-    <section id="findrecipe" class="container">
-        <div class="card-deck">
-            <div class="col-lg-4">
-                <div class="card">
-                    <img class="card-img-top" src="https://images.unsplash.com/photo-1506354666786-959d6d497f1a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="Card image cap">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    </div>
-                    <div class="card-footer">
-                      <button class="btn btn-warning text-white">Cook!</button>
-                    </div>
-                  </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="card">
-                    <img class="card-img-top" src="https://images.unsplash.com/photo-1506354666786-959d6d497f1a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="Card image cap">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    </div>
-                    <div class="card-footer">
-                      <button class="btn btn-warning text-white">Cook!</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="card">
-                    <img class="card-img-top" src="https://images.unsplash.com/photo-1506354666786-959d6d497f1a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="Card image cap">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    </div>
-                    <div class="card-footer">
-                      <button class="btn btn-warning text-white">Cook!</button>
-                    </div>
-                  </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="card">
-                    <img class="card-img-top" src="https://images.unsplash.com/photo-1506354666786-959d6d497f1a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="Card image cap">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    </div>
-                    <div class="card-footer">
-                      <button class="btn btn-warning text-white">Cook!</button>
-                    </div>
-                  </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="card">
-                    <img class="card-img-top" src="https://images.unsplash.com/photo-1506354666786-959d6d497f1a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="Card image cap">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    </div>
-                    <div class="card-footer">
-                      <button class="btn btn-warning text-white">Cook!</button>
-                    </div>
-                  </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="card">
-                    <img class="card-img-top" src="https://images.unsplash.com/photo-1506354666786-959d6d497f1a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80" alt="Card image cap">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                    </div>
-                    <div class="card-footer">
-                      <button class="btn btn-warning text-white">Cook!</button>
-                    </div>
-                  </div>
-            </div>
+    <section class="container">
+        <div id="find-recipe" class="card-deck">
+          <!-- narik data dari API -->
         </div>  
     </section>
 
+    <script src="findrecipepage.js"></script>
 </body>
 </html>
