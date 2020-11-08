@@ -17,6 +17,7 @@ Impact Byte group project about recipe
 1. Navbar : Ambil dari mainpage 
 1. Footer : Ambil dari mainpage
 1. CSS Framework Memakai Bootstrap 4
+1. Theme Color : #682323
         
 
 ### Main Page (Fauzi)
@@ -37,7 +38,7 @@ Impact Byte group project about recipe
 - [ ] Search Button 
 - [ ] Card 
 - [ ] Footer
-
+- [ ] Fitur Search Recipe
 ### Bookmark Recipe Page (Raka)
 - [ ] Navbar
 - [ ] Card
