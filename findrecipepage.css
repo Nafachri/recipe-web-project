@@ -3,6 +3,10 @@
     margin-top: 5%;
 }
 
+option {
+    font-family: 'Heebo', sans-serif;
+}
+
 /* Card Recipe Styling */
 #findrecipe {
     margin-top: 5%;
