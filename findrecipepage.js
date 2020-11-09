@@ -48,12 +48,15 @@ getData();
 //Filter Menu Yang Dimasukan User
 const filterRecipe = () => {
   let filter = data.filter((recipe) => {
+    let myRegex = new RegExp(inputUserRecipe.value,"i");//ini untuk user bisa meng input dengan huruf kecil
     return (
-      recipe.recipeName.includes(inputUserRecipe.value) &&
+      // recipe.recipeName.includes(inputUserRecipe.value) 
+      
+      myRegex.test(recipe.recipeName)
+      &&
       (recipe.category == category.value || category.value == "All")
     );
   }); // ini mengambil data recipe untuk di filter
-  console.log(filter);
   showCard(filter);
   return false;
 };
