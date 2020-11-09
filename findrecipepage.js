@@ -12,10 +12,16 @@ let data ;
 
 // Ambil Data Dari API 
 const getData = async () => {
-    const response = await fetch(url);
-    data = await response.json();
-    showCard(data) // ini dipanggil lagi karena kita mau nampilin si card
-    console.log(show);
+    try{
+        const response = await fetch(url);
+        data = await response.json();
+        showCard(data) // ini dipanggil lagi karena kita mau nampilin si card
+        console.log(show);
+    }catch{
+        console.log("err")
+    }
+
+    
 }
 
 // Menaruh Data Yang Di Dapat Dari API Kedalam Card
@@ -43,7 +49,7 @@ getData()
 
 //Filter Menu Yang Dimasukan User
 const filterRecipe = () => {
-    let filter = data.filter(recipe => recipe.recipeName.includes(inputUserRecipe.value)); // ini mengambil data recipe untuk di filter
+    let filter = data.filter(recipe => recipe.recipeName.includes(inputUserRecipe.value) && recipe.recipecategory.includes(category)); // ini mengambil data recipe untuk di filter
     console.log(filter);
     showCard(filter)
     
