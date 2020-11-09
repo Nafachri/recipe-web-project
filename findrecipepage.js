@@ -16,12 +16,9 @@ const getData = async () => {
         const response = await fetch(url);
         data = await response.json();
         showCard(data) // ini dipanggil lagi karena kita mau nampilin si card
-        console.log(show);
-    }catch{
-        console.log("err")
+    }catch(err){
+      console.log(err)
     }
-
-    
 }
 
 // Menaruh Data Yang Di Dapat Dari API Kedalam Card
@@ -53,7 +50,7 @@ const filterRecipe = () => {
   let filter = data.filter((recipe) => {
     return (
       recipe.recipeName.includes(inputUserRecipe.value) &&
-      category.value == "All" ? recipe.category == ('Indonesia' || 'International') : recipe.category == category.value
+      (recipe.category == category.value || category.value == "All")
     );
   }); // ini mengambil data recipe untuk di filter
   console.log(filter);
