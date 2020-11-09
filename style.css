@@ -26,3 +26,7 @@ footer a {
 footer a:hover {
   color: white;
 }
+.res {
+  justify-content: center;
+  display: flex;
+}

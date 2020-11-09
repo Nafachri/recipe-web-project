@@ -1,42 +1,61 @@
 /* Font Family */
 
 /* Heebo */
-header, #card-title{
-    font-family: 'Heebo', sans-serif;
+header,
+#card-title {
+  font-family: "Heebo", sans-serif;
 }
 
 /* Poppins */
 
-#input-user-recipe, #button-click, #buttonCook, select {
-    font-family: 'Poppins', sans-serif;
+#input-user-recipe,
+#button-click,
+#buttonCook,
+select {
+  font-family: "Poppins", sans-serif;
 }
 
 /* Header Styling */
 header {
-    text-align: center;
-    margin-top: 20px;
-    font-weight: 700;
-
+  text-align: center;
+  margin-top: 20px;
+  font-weight: 700;
 }
 
 /* User Input Styling */
 .form-row {
-    margin-top: 5%;
+  margin-top: 5%;
 }
 
 /* Card Recipe Styling */
 #findrecipe {
-    margin-top: 5%;
+  margin-top: 5%;
 }
 
 .card {
-    margin-top: 20px;
-    text-align: center;
+  margin-top: 20px;
+  text-align: center;
 }
 
 /* Button Color Styling */
 
-#buttonCook, #button-click {
-    background-color: #682323;
+#buttonCook,
+#button-click {
+  background-color: #682323;
 }
 
+footer {
+  background: #061d25;
+  padding: 10px 0;
+  text-align: center;
+  position: relative;
+}
+footer a {
+  color: #70726f;
+  font-size: 20px;
+  padding: 10px;
+  transition: all 0.5s ease;
+}
+footer a:hover {
+  color: white;
+}
