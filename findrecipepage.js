@@ -30,7 +30,7 @@ const showCard = (recipe) => {
   findRecipe.innerHTML = "";
   for (let i = 0; i < recipe.length; i++) {
     let data = `
-        <div class = "col-lg-4">
+        <div class = "col-lg-4 d-flex pb-3">
             <div class="card">
                 <img id="card-image" class="card-img-top" src="${recipe[i].imgUrl}" alt="Card image cap">
                     <div class="card-body">
