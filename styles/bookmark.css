@@ -1,41 +1,43 @@
 /* Font Family */
 
 /* Heebo */
-header,
+#page-title,
 #card-title {
   font-family: "Heebo", sans-serif;
 }
 
 /* Poppins */
 
-#input-user-recipe,
-#button-click,
-#buttonCook,
-select {
+#buttonCook {
   font-family: "Poppins", sans-serif;
 }
 
 /* Header Styling */
-header {
+#page-title {
   text-align: center;
   margin-top: 20px;
   font-weight: 700;
 }
 
-/* User Input Styling */
-.form-row {
-  margin-top: 5%;
+/* section {
+  height: calc(100vh - 126px);
+  max-height: calc(100vh - 126px);
+} */
+
+#recipe-list {
+  height: calc(100vh - 206px);
+  max-height: calc(100vh - 206px);
+  overflow-y: scroll;
 }
 
-/* Card Recipe Styling */
-#findrecipe {
-  margin-top: 5%;
+/* Koding untuk hide scrollbar overflow */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
 }
 
-#card-image {
-        width: 100%;
-        max-height: 15vw;
-        object-fit: cover;
+::-webkit-scrollbar-thumb {
+  background: #ff0000;
 }
 
 .card {
@@ -45,8 +47,7 @@ header {
 
 /* Button Color Styling */
 
-#buttonCook,
-#button-click {
+#buttonCook {
   background-color: #682323;
 }
 

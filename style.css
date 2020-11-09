@@ -30,3 +30,17 @@ footer a:hover {
   justify-content: center;
   display: flex;
 }
+.carousel-item,
+.carousel-inner,
+.carousel-inner img {
+  height: 100%;
+  width: auto;
+}
+
+.carousel-item {
+  text-align: center;
+}
+
+.carousel {
+  height: 75vh;
+}
