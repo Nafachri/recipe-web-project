@@ -1,16 +1,16 @@
 //Ngambil Element Buat Input
-//Ambil 
+//Ambil
 
 let inputUserRecipe = document.getElementById("input-user-recipe");
 let findRecipe = document.getElementById("find-recipe")
 let category = document.getElementById("category-recipe")
 let buttonClick = document.getElementById("button-click");
-let url = "https://5fa790be9def160016adaf1c.mockapi.io/api/v1/recipes"
+let url = "https://5fa790be9def160016adaf1c.mockapi.io/api/v1/recipes";
 
 //Data Dari API Untuk Di Akses Semua Function
-let data ;
+let data;
 
-// Ambil Data Dari API 
+// Ambil Data Dari API
 const getData = async () => {
     try{
         const response = await fetch(url);
@@ -25,10 +25,11 @@ const getData = async () => {
 }
 
 // Menaruh Data Yang Di Dapat Dari API Kedalam Card
-const showCard = (recipe) => { //ini recipe mengambil data dari API Di Atas
-    findRecipe.innerHTML = "";
-    for(let i = 0; i < recipe.length; i++){
-      let data = `
+const showCard = (recipe) => {
+  //ini recipe mengambil data dari API Di Atas
+  findRecipe.innerHTML = "";
+  for (let i = 0; i < recipe.length; i++) {
+    let data = `
         <div class = "col-lg-4">
             <div class="card">
                 <img id="card-image" class="card-img-top" src="${recipe[i].imgUrl}" alt="Card image cap">
@@ -40,19 +41,23 @@ const showCard = (recipe) => { //ini recipe mengambil data dari API Di Atas
                         <button id="buttonCook" class="btn text-white">Cook!</button>
                     </div>
             </div>
-        </div>`
+        </div>`;
 
-        findRecipe.innerHTML += data; // ini artinya nanti isi dari findrecipe adalah data
-    }
+    findRecipe.innerHTML += data; // ini artinya nanti isi dari findrecipe adalah data
+  }
 };
-getData()
+getData();
 
 //Filter Menu Yang Dimasukan User
 const filterRecipe = () => {
-    let filter = data.filter(recipe => recipe.recipeName.includes(inputUserRecipe.value) && recipe.recipecategory.includes(category)); // ini mengambil data recipe untuk di filter
-    console.log(filter);
-    showCard(filter)
-    
-    return false;
-}
+  let filter = data.filter((recipe) => {
+    return (
+      recipe.recipeName.includes(inputUserRecipe.value) &&
+      category.value == "All" ? recipe.category == ('Indonesia' || 'International') : recipe.category == category.value
+    );
+  }); // ini mengambil data recipe untuk di filter
+  console.log(filter);
+  showCard(filter);
+  return false;
+};
 buttonClick.onclick = filterRecipe;

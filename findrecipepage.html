@@ -12,7 +12,43 @@
 <body>
 
     <!-- Navbar -->
-
+    <nav class="navbar navbar-expand-lg navbar-light nav-kastem" style="background-color: #682323">
+      <img src="/images/cook.svg" height="80" width="120" alt="" />
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto"></ul>
+        <form class="form-inline my-2 my-lg-0">
+          <a class="nav-link active" style="color: white" href="#">Home</a>
+          <a class="nav-link active" style="color: white"href="#">Recipe</a>
+          <a class="nav-link active" style="color: white" href="#">Sign In</a>
+          <a class="nav-link active" style="color: white" href="#">Sign Out</a>
+        </form>
+      </div>
+    </nav>
+    <nav>
+        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" style="color: whitesmoke; font-family: 'Heebo';font-size: 18px;" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" style="color: whitesmoke; font-family: 'Heebo';font-size: 18px;" href="#">Recipe</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" style="color: whitesmoke; font-family: 'Heebo';font-size: 18px;" href="#">Sign In</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" style="color: whitesmoke; font-family: 'Heebo';font-size: 18px;" href="#">Sign Out</a>
+            </li>
+            </ul>
+        </div>
+    </nav>
 
 
     <!-- Header -->
@@ -28,11 +64,11 @@
             <input id="input-user-recipe" type="text" class="form-control" placeholder="Find Recipe ">
           </div>
           <div class="col-sm-12 col-md-4">
-            <select class="custom-select mr-sm-2" id="category-recipe">
-                <option selected>Category</option>
-                <option value="indonesia">Indonesia</option>
-                <option value="international">International</option>
-            </select>
+            <select class="custom-select mr-sm-2" id="category">
+              <option selected value="All">All Category</option>
+              <option value="Indonesia">Indonesia</option>
+              <option value="International">International</option>
+          </select>
           </div>
           <div class="col-sm-12 col-md-1">
             <button id="button-click" class="btn text-white">Search</button>
@@ -46,7 +82,13 @@
           <!-- narik data dari API -->
         </div>  
     </section>
-
+    
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet"/>
+<footer class="mt-4">
+  <a href="https://cookpad.com/id"><i class="fa fa-facebook"></i></a>
+  <a href="https://cookpad.com/id"><i class="fa fa-twitter"></i></a>
+  <a href="https://cookpad.com/id"><i class="fa fa-globe"></i></a>
+</footer>
     <script src="findrecipepage.js"></script>
 </body>
 </html>

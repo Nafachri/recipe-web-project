@@ -26,7 +26,10 @@ footer a {
 footer a:hover {
   color: white;
 }
-
+.res {
+  justify-content: center;
+  display: flex;
+}
 .carousel-item,
 .carousel-inner,
 .carousel-inner img {
