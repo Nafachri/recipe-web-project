@@ -1,7 +1,7 @@
 /* Font Family */
 
 /* Heebo */
-header,
+#page-title,
 #card-title {
   font-family: "Heebo", sans-serif;
   color: white;
@@ -17,7 +17,7 @@ select {
 }
 
 /* Header Styling */
-header {
+#page-title {
   text-align: center;
   margin-top: 20px;
   font-weight: 700;
@@ -29,7 +29,7 @@ header {
 }
 
 /* Card Recipe Styling */
-#findrecipe {
+#find-recipe {
   margin-top: 5%;
 }
 
@@ -50,6 +50,8 @@ header {
 #button-click {
   background-color: #682323;
 }
+
+/* Footer Styling */
 
 footer {
   background: #061d25;
