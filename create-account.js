@@ -47,7 +47,7 @@ function postData(event) {
   let email = document.getElementById("email").value;
 
   let dataUser = {
-    name,
+    username: name,
     email,
     password,
   };
