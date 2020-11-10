@@ -36,7 +36,7 @@ const showCard = (recipe) => {
                         <p class="card-text">${recipe[i].desc}</p>
                     </div>
                     <div class="card-footer">
-                        <button id="buttonCook" class="btn text-white">Cook!</button>
+                      <a href="#" id="buttonCook" class="btn text-white" onClick="detail(${i})">Cook</a>
                     </div>
             </div>
         </div>`;
