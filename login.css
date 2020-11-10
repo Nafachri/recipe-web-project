@@ -4,16 +4,16 @@
   box-sizing: border-box;
 }
 body {
-  background-color: #682323;
+  background-color: white;
 }
 /* .row {
     background-color: #eeb3b0;
     border-radius: 30px;
     box-shadow: 5px 5px 8px black;
 } */
-img {
-  width: 100%;
-  height: 100%;
+#img1 {
+  width: 60vw;
+  height: calc(100vh - 107px);
 }
 button {
   border: none;
@@ -48,4 +48,7 @@ form-container {
   background-color: #682323;
   background-size: cover;
   height: 100vh;
+}
+#cover {
+  overflow-x: hidden;
 }
