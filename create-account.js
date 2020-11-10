@@ -39,6 +39,9 @@ button.addEventListener("click", postData);
 function postData(event) {
   event.preventDefault();
 
+  let usernameError = document.getElementById("username-error");
+  let emailError = document.getElementById("email-error");
+  let passwordError = document.getElementById("password-error");
   let name = document.getElementById("username").value;
   let password = document.getElementById("password").value;
   let email = document.getElementById("email").value;
