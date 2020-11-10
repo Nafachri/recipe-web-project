@@ -49,3 +49,8 @@ a p .form-control .button {
     font-family: 'Poppins', sans-serif;
     
 }
+#username-error, #email-error, #password-error {
+    margin-top: -15px;
+    color: red;
+    font-size: 15px;
+}

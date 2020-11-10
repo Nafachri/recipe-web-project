@@ -29,7 +29,7 @@ const clearBookmark = () => {
 // function untuk mengambil informasi user dari local storage
 const getUserCredential = () => {
   const userCred = localStorage.getItem("user_credential");
-
+  console.log(userCred);
   // mengembalikan object informasi user
   return JSON.parse(userCred);
 };
@@ -38,7 +38,7 @@ const getUserCredential = () => {
 // function ini menerima argument berupa object informasi user itu sendiri
 const storeUserCredential = (userCred) => {
   // simpan credential user kedalam local storage dengan key "user_credential"
-  localStorage.setItem("user_credential", userCred);
+  localStorage.setItem("user_credential", JSON.stringify(userCred));
 
   // Check jika key "user_credential" memiliki value
   // Jika iya maka return true sebagai tanda proses berhasil
