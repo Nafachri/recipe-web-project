@@ -68,3 +68,15 @@ footer a {
 footer a:hover {
   color: white;
 }
+
+/* detail recipe styling */
+
+#recipe {
+  text-align: center;
+  color: white;
+  margin-bottom: 4%;
+}
+
+#detail {
+  color: white;
+}

@@ -1,26 +1,28 @@
 let recipe = document.getElementById("recipe");
 let img = document.getElementById("img");
-let nama = localStorage.getItem("Nama");
-let gambar = localStorage.getItem("Gambar");
-let deskripsi =localStorage.getItem("Deskrip")
-let bahan = JSON.parse(localStorage["Bahan"]);
-let step = JSON.parse(localStorage["Step"]);
-let image = `<img class="rounded mx-auto d-block img-fluid" src="${gambar}" style="width: 500px;">`;
 
-img.innerHTML = image;
-bahan.forEach(myBahan);
-recipe.innerHTML = nama;
-descripsi.innerHTML = deskripsi
-step.forEach(myStep);
+let id = localStorage.getItem("idResep");
+let getDataRecipe = async function(){
+  try{
+    let response = await fetch(`https://5fa790be9def160016adaf1c.mockapi.io/api/v1/recipes/${id}`);
+    let data = await response.json();
+    img.innerHTML = `<img class="rounded mx-auto d-block img-fluid" src="${data.imgUrl}" style="width: 500px;">`;
+    for(let i = 0; i < data.ingredients.length; i++){
+      document.getElementById("bahan").innerHTML += "<li>" + data.ingredients[i] + "</li>";
+    };
+    for(let j = 0; j <data.steps.length; j++){
+      document.getElementById("step").innerHTML += "<li>" + data.steps[j] + "</li>";
+    }
+    recipe.innerHTML = data.recipeName;
+    descripsi.innerHTML = data.desc;
+  }
+  catch(error){
+    
+  }
 
-
-function myBahan(item) {
-  document.getElementById("bahan").innerHTML += "<li>" + item + "</li>";
+  
 }
-
-function myStep(item) {
-  document.getElementById("step").innerHTML += "<li>" + item + "</li>";
-}
+getDataRecipe()
 
 
 
