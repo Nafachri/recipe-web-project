@@ -36,35 +36,6 @@ addBookmark({
   category: "Indonesia",
 });
 
-const showCard = (recipe) => {
-  cardSection.innerHTML = "";
-  for (let i = 0; i < recipe.length; i++) {
-    let data = `
-        <div class = "col-sm-12 col-md-6 col-lg-4">
-            <div class="card">
-                <img class="card-img-top" src="${recipe[i].imgUrl}" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 id="card-title" class="card-title">${recipe[i].recipeName}</h5>
-                        <p class="card-text">${recipe[i].desc}</p>
-                    </div>
-                    <div class="card-footer">
-                        <button id="buttonCook" class="btn text-white">Cook!</button>
-                        <button id="remove-btn-${i}" type="button" class="btn btn-outline-danger">Remove</button>
-                    </div>
-            </div>
-        </div>`;
-
-    cardSection.innerHTML += data;
-    const removeBtn = document.getElementById(`remove-btn-${i}`);
-
-    removeBtn.addEventListener("click", () => {
-      console.log(i);
-      removeBookmark(i);
-      loadBookmark();
-    });
-  }
-};
-
 function loadBookmark() {
   const bookmark = getBookmark();
 
@@ -75,7 +46,63 @@ function loadBookmark() {
   }
 }
 
+function blabla(index) {
+  console.log(index);
+  removeBookmark(index);
+  loadBookmark();
+}
+
+const showCard = (recipe) => {
+  cardSection.innerHTML = "";
+  console.log(blabla);
+
+  let data = `
+        <div class = "col-sm-12 col-md-6 col-lg-4">
+            <div class="card">
+                <img class="card-img-top" src="${recipe[0].imgUrl}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 id="card-title" class="card-title">${recipe[0].recipeName}</h5>
+                        <p class="card-text">${recipe[0].desc}</p>
+                    </div>
+                    <div class="card-footer">
+                        <button id="buttonCook" class="btn text-white">Cook!</button>
+                        <button onclick=blabla(0) type="button" class="remove-btn btn btn-outline-danger">Remove</button>
+                    </div>
+            </div>
+        </div>`;
+
+  cardSection.innerHTML += data;
+
+  // for (let i = 0; i < recipe.length; i++) {
+  //   console.log(blabla);
+  //   let data = `
+  //       <div class = "col-sm-12 col-md-6 col-lg-4">
+  //           <div class="card">
+  //               <img class="card-img-top" src="${recipe[i].imgUrl}" alt="Card image cap">
+  //                   <div class="card-body">
+  //                       <h5 id="card-title" class="card-title">${recipe[i].recipeName}</h5>
+  //                       <p class="card-text">${recipe[i].desc}</p>
+  //                   </div>
+  //                   <div class="card-footer">
+  //                       <button id="buttonCook" class="btn text-white">Cook!</button>
+  //                       <button onclick=blabla(${i}) type="button" class="remove-btn btn btn-outline-danger">Remove</button>
+  //                   </div>
+  //           </div>
+  //       </div>`;
+
+  //   cardSection.innerHTML += data;
+  // }
+};
+
 loadBookmark();
+
+// const removeBtn = document.getElementsByClassName(`remove-btn`);
+
+// removeBtn.addEventListener("click", () => {
+//   console.log(i);
+//   removeBookmark(i);
+//   loadBookmark();
+// });
 
 // removeBtn.addEventListener("click", () => {
 //   console.log(i);
