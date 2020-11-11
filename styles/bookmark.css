@@ -25,19 +25,19 @@
 } */
 
 #recipe-list {
-  height: calc(100vh - 206px);
-  max-height: calc(100vh - 206px);
+  height: calc(100vh - 232px);
+  max-height: calc(100vh - 232px);
   overflow-y: scroll;
 }
 
 /* Koding untuk hide scrollbar overflow */
 ::-webkit-scrollbar {
-  width: 0px;
-  background: transparent;
+  width: 0px !important;
+  background: transparent !important;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #ff0000;
+  background: #ff0000 !important;
 }
 
 .card {

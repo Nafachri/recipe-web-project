@@ -61,7 +61,6 @@ function postData(event) {
   })
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
       window.location.href = "./login.html";
     })
     .catch((err) => console.log(err));

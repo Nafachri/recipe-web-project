@@ -20,13 +20,11 @@ async function validate() {
         password.value === data[i].password
       ) {
         let isStored = storeUserCredential(data[i]);
-        console.log("login success");
         if (isStored) {
           window.location.href = "./findrecipepage.html";
         }
       } else {
         document.getElementById("error").innerHTML = errorMessage;
-        console.log("error");
       }
     }
   } catch (error) {

@@ -1,8 +1,3 @@
-import {
-  addBookmark,
-  getUserCredential,
-} from "./services/local-storage-services.js";
-
 //Ngambil Element Buat Input
 //Ambil
 
@@ -27,46 +22,9 @@ const getData = async () => {
   }
 };
 
-// Menaruh Data Yang Di Dapat Dari API Kedalam Card
-const showCard = (recipe) => {
-  //ini recipe mengambil data dari API Di Atas
-  console.log(recipe);
-  findRecipe.innerHTML = "";
-  for (let i = 0; i < recipe.length; i++) {
-    let data = `
-        <div class = "col-lg-4 d-flex pb-3">
-            <div class="card">
-                <img id="card-image" class="card-img-top" src="${recipe[i].imgUrl}" alt="Card image cap">
-                    <div class="card-body">
-                        <h5 id="card-title" class="card-title text-danger">${recipe[i].recipeName}</h5>
-                        <p class="card-text text-danger">${recipe[i].desc}</p>
-                    </div>
-                    <div class="card-footer">
-                      <a id="buttonCook" class="btn text-white" onClick="detail(${recipe[i].id})">Cook</a>
-                      <button id="bookmark-btn-${i}" type="button" class="btn btn-outline-danger">Bookmark</button>
-                    </div>
-            </div>
-        </div>`;
-
-    findRecipe.innerHTML += data; // ini artinya nanti isi dari findrecipe adalah data
-
-    const bookmarkBtn = document.getElementById(`bookmark-btn-${i}`);
-
-    bookmarkBtn.addEventListener("click", () => {
-      let user = getUserCredential();
-      if (user) {
-        addBookmark(recipe[i]);
-      } else {
-        alert("Anda harus login terlebih dahulu.");
-      }
-    });
-  }
-};
-getData();
-
 const detail = (id) => {
-  let baku = data[id].ingredients;
-  let step = data[id].steps;
+  // let baku = data[id].ingredients;
+  // let step = data[id].steps;
   localStorage.setItem("idResep", id);
   // localStorage.setItem("Nama",data[id].recipeName);
   // localStorage.setItem("Gambar",data[id].imgUrl);
@@ -75,6 +33,63 @@ const detail = (id) => {
   // localStorage["Step"] = JSON.stringify(step);
   window.location.href = "recipe.html";
 };
+
+// function untuk mengambil informasi user dari local storage
+const getUserCredential = () => {
+  const userCred = localStorage.getItem("user_credential");
+
+  // mengembalikan object informasi user
+  return JSON.parse(userCred);
+};
+
+const addBookmark = (recipe) => {
+  let existingBookmark = JSON.parse(localStorage.getItem("bookmark"));
+
+  if (existingBookmark) {
+    let newBookmark = [...existingBookmark, recipe];
+    localStorage.setItem("bookmark", JSON.stringify(newBookmark));
+  } else {
+    localStorage.setItem("bookmark", JSON.stringify([recipe]));
+  }
+};
+
+function bookmark(recipe) {
+  let user = getUserCredential();
+  if (user) {
+    addBookmark(recipe);
+    alert("Resep berhasil di bookmark.");
+  } else {
+    alert("Anda harus login terlebih dahulu.");
+  }
+}
+
+// Menaruh Data Yang Di Dapat Dari API Kedalam Card
+function showCard(recipe) {
+  //ini recipe mengambil data dari API Di Atas
+  // console.log(recipe);
+  findRecipe.innerHTML = "";
+  for (let i = 0; i < recipe.length; i++) {
+    let item = recipe[i];
+    let data = `
+        <div class = "col-lg-4 d-flex pb-3">
+            <div class="card">
+                <img id="card-image" class="card-img-top" src="${item.imgUrl}" alt="Card image cap"/>
+                    <div class="card-body">
+                        <h5 id="card-title" class="card-title text-danger">${item.recipeName}</h5>
+                        <p class="card-text text-danger">${item.desc}</p>
+                    </div>
+                    <div class="card-footer">
+                      <a id="buttonCook" class="btn text-white" onClick="detail(${item.id})">Cook</a>
+                      <button onclick="bookmark(${item.id})" type="button" class="btn btn-outline-danger">Bookmark</button>
+                    </div>
+            </div>
+        </div>`;
+
+    findRecipe.innerHTML += data; // ini artinya nanti isi dari findrecipe adalah data
+  }
+}
+getData();
+
 //Filter Menu Yang Dimasukan User
 const filterRecipe = () => {
   let filter = data.filter((recipe) => {
@@ -90,4 +105,3 @@ const filterRecipe = () => {
   return false;
 };
 buttonClick.onclick = filterRecipe;
-console.log(filterRecipe());
