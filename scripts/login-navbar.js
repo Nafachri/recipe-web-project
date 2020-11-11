@@ -1,4 +1,7 @@
-import { getUserCredential } from "../services/local-storage-services.js";
+import {
+  getUserCredential,
+  clearBookmark,
+} from "../services/local-storage-services.js";
 
 const navbar = document.getElementsByClassName("navbar-nav")[0];
 
@@ -6,6 +9,7 @@ const signInNav = navbar.children[2];
 const signUpNav = navbar.children[3];
 
 const signOut = () => {
+  clearBookmark();
   localStorage.removeItem("user_credential");
   window.location.href = "../index.html";
 };
