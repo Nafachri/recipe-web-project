@@ -36,7 +36,7 @@ const showCard = (recipe) => {
                         <p class="card-text">${recipe[i].desc}</p>
                     </div>
                     <div class="card-footer">
-                      <a href="#" id="buttonCook" class="btn text-white" onClick="detail(${i})">Cook</a>
+                      <a href="recipe.html" id="buttonCook" class="btn text-white" onClick="detail(${i})">Cook</a>
                     </div>
             </div>
         </div>`;
@@ -47,43 +47,13 @@ const showCard = (recipe) => {
 getData();
 
 const detail = (id) => {
-  form.innerHTML = "";
-  let ingredients = "";
-  let steps = "";
-  for (let j = 0; j < data[id].ingredients.length; j++) {
-    ingredients += "<li>" + data[id].ingredients[j] + "</li>";
-  }
-  for (let k = 0; k < data[id].steps.length; k++) {
-    steps += "<li>" + data[id].steps[k] + "</li>";
-  }
-  let detailData = `
-      
-      <div class="container" style="margin-top: 20px font-size:10vw;">
-      <header>
-        <h1>Detail</h1>
-      </header>
-        <img class="rounded mx-auto d-block img-fluid" src="${data[id].imgUrl}" style="width: 500px;">
-        </div>
-        <div class="container" style="margin-bottom: 40px;">
-          <b><h1 style="text-align: center; margin-top: 20px;" >${data[id].recipeName}</h1></b>
-          <b><h3 style="margin-top: 20px;">Deskripsi :</h3></b>
-          <h3 style="margin-top: 5px; font-size: 24px;">${data[id].desc}</h3>
-          <b><h3 style="margin-top: 20px;">Bahan-bahan yang diperlukan :</h3></b>
-          <ul style="margin-top: 5px; font-size: 24px; list-style-type: square;">
-          ${ingredients}
-          </ul> 
-          <b><h3 style="margin-top: 20px;">Step memasak :</h3></b>
-          <ol style="margin-top: 5px; font-size: 24px; text-align: justify;">
-          ${steps}
-          </ol> 
-          <a href="findrecipepage.html" class="btn text-white" style="margin-top: 20px; background-color: #b94242;">Kembali</a>
-          
-          </div>
-  
-        `;
-
-  findRecipe.innerHTML = "";
-  findRecipe.innerHTML = detailData;
+  let baku = data[id].ingredients
+  let step = data[id].steps
+  localStorage.setItem("Nama",data[id].recipeName)
+  localStorage.setItem("Gambar",data[id].imgUrl)
+  localStorage.setItem("Deskrip",data[id].desc)
+  localStorage["Bahan"] = JSON.stringify(baku);
+  localStorage["Step"] = JSON.stringify(step);
 };
 //Filter Menu Yang Dimasukan User
 const filterRecipe = () => {
