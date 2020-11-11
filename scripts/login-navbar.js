@@ -7,8 +7,8 @@ const signUpNav = navbar.children[3];
 
 const signOut = () => {
   localStorage.removeItem("user_credential");
-  window.location.href ="../index.html"
-}
+  window.location.href = "../index.html";
+};
 
 const onInit = () => {
   const userCred = getUserCredential();
@@ -17,7 +17,7 @@ const onInit = () => {
     const signOutNav = document.createElement("li");
     signOutNav.className = "nav-item";
     signOutNav.innerHTML = `<a class="nav-link" style="color: whitesmoke; font-family: 'Heebo'; font-size: 18px" href="#">Sign Out</a>`;
-    signOutNav.addEventListener("click", signOut)
+    signOutNav.addEventListener("click", signOut);
 
     const profileNav = document.createElement("li");
     profileNav.className = "nav-item";
@@ -25,7 +25,7 @@ const onInit = () => {
 
     const bookmarkNav = document.createElement("li");
     bookmarkNav.className = "nav-item";
-    bookmarkNav.innerHTML = `<a class="nav-link" style="color: whitesmoke; font-family: 'Heebo'; font-size: 18px" href="#">Bookmark</a>`;
+    bookmarkNav.innerHTML = `<a class="nav-link" style="color: whitesmoke; font-family: 'Heebo'; font-size: 18px" href="../views/bookmark.html">Bookmark</a>`;
 
     navbar.replaceChild(profileNav, signInNav);
     navbar.replaceChild(signOutNav, signUpNav);
@@ -33,4 +33,3 @@ const onInit = () => {
   }
 };
 onInit();
-
