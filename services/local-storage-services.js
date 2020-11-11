@@ -29,7 +29,7 @@ const clearBookmark = () => {
 // function untuk mengambil informasi user dari local storage
 const getUserCredential = () => {
   const userCred = localStorage.getItem("user_credential");
-  console.log(userCred);
+
   // mengembalikan object informasi user
   return JSON.parse(userCred);
 };
