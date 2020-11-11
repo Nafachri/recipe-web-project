@@ -52,3 +52,6 @@ footer a:hover {
 .warna {
   background: #f86760;
 }
+#about {
+  overflow-x: hidden;
+}
