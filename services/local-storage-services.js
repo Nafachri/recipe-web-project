@@ -16,6 +16,7 @@ const addBookmark = (recipe) => {
 };
 
 const removeBookmark = (index) => {
+  console.log(index);
   let existingBookmark = JSON.parse(localStorage.getItem("bookmark"));
   existingBookmark.splice(index, 1);
 
@@ -23,7 +24,7 @@ const removeBookmark = (index) => {
 };
 
 const clearBookmark = () => {
-  return localStorage.clear();
+  return localStorage.removeItem("bookmark");
 };
 
 // function untuk mengambil informasi user dari local storage

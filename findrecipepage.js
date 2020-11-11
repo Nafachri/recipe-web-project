@@ -1,3 +1,8 @@
+import {
+  addBookmark,
+  getUserCredential,
+} from "./services/local-storage-services.js";
+
 //Ngambil Element Buat Input
 //Ambil
 
@@ -25,7 +30,7 @@ const getData = async () => {
 // Menaruh Data Yang Di Dapat Dari API Kedalam Card
 const showCard = (recipe) => {
   //ini recipe mengambil data dari API Di Atas
-  console.log(recipe)
+  console.log(recipe);
   findRecipe.innerHTML = "";
   for (let i = 0; i < recipe.length; i++) {
     let data = `
@@ -38,25 +43,37 @@ const showCard = (recipe) => {
                     </div>
                     <div class="card-footer">
                       <a id="buttonCook" class="btn text-white" onClick="detail(${recipe[i].id})">Cook</a>
+                      <button id="bookmark-btn-${i}" type="button" class="btn btn-outline-danger">Bookmark</button>
                     </div>
             </div>
         </div>`;
 
     findRecipe.innerHTML += data; // ini artinya nanti isi dari findrecipe adalah data
+
+    const bookmarkBtn = document.getElementById(`bookmark-btn-${i}`);
+
+    bookmarkBtn.addEventListener("click", () => {
+      let user = getUserCredential();
+      if (user) {
+        addBookmark(recipe[i]);
+      } else {
+        alert("Anda harus login terlebih dahulu.");
+      }
+    });
   }
 };
 getData();
 
 const detail = (id) => {
-  let baku = data[id].ingredients
-  let step = data[id].steps
-  localStorage.setItem("idResep", id)
+  let baku = data[id].ingredients;
+  let step = data[id].steps;
+  localStorage.setItem("idResep", id);
   // localStorage.setItem("Nama",data[id].recipeName);
   // localStorage.setItem("Gambar",data[id].imgUrl);
   // localStorage.setItem("Deskrip",data[id].desc);
   // localStorage["Bahan"] = JSON.stringify(baku);
   // localStorage["Step"] = JSON.stringify(step);
-  window.location.href = "recipe.html"
+  window.location.href = "recipe.html";
 };
 //Filter Menu Yang Dimasukan User
 const filterRecipe = () => {
