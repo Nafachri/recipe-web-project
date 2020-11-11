@@ -25,6 +25,7 @@ const getData = async () => {
 // Menaruh Data Yang Di Dapat Dari API Kedalam Card
 const showCard = (recipe) => {
   //ini recipe mengambil data dari API Di Atas
+  console.log(recipe)
   findRecipe.innerHTML = "";
   for (let i = 0; i < recipe.length; i++) {
     let data = `
@@ -32,11 +33,11 @@ const showCard = (recipe) => {
             <div class="card">
                 <img id="card-image" class="card-img-top" src="${recipe[i].imgUrl}" alt="Card image cap">
                     <div class="card-body">
-                        <h5 id="card-title" class="card-title">${recipe[i].recipeName}</h5>
-                        <p class="card-text">${recipe[i].desc}</p>
+                        <h5 id="card-title" class="card-title text-danger">${recipe[i].recipeName}</h5>
+                        <p class="card-text text-danger">${recipe[i].desc}</p>
                     </div>
                     <div class="card-footer">
-                      <a href="recipe.html" id="buttonCook" class="btn text-white" onClick="detail(${i})">Cook</a>
+                      <a id="buttonCook" class="btn text-white" onClick="detail(${recipe[i].id})">Cook</a>
                     </div>
             </div>
         </div>`;
@@ -49,11 +50,13 @@ getData();
 const detail = (id) => {
   let baku = data[id].ingredients
   let step = data[id].steps
-  localStorage.setItem("Nama",data[id].recipeName)
-  localStorage.setItem("Gambar",data[id].imgUrl)
-  localStorage.setItem("Deskrip",data[id].desc)
-  localStorage["Bahan"] = JSON.stringify(baku);
-  localStorage["Step"] = JSON.stringify(step);
+  localStorage.setItem("idResep", id)
+  // localStorage.setItem("Nama",data[id].recipeName);
+  // localStorage.setItem("Gambar",data[id].imgUrl);
+  // localStorage.setItem("Deskrip",data[id].desc);
+  // localStorage["Bahan"] = JSON.stringify(baku);
+  // localStorage["Step"] = JSON.stringify(step);
+  window.location.href = "recipe.html"
 };
 //Filter Menu Yang Dimasukan User
 const filterRecipe = () => {
@@ -70,3 +73,4 @@ const filterRecipe = () => {
   return false;
 };
 buttonClick.onclick = filterRecipe;
+console.log(filterRecipe());
